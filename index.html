@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07120f" />
+  <title>TOUCHLINE — Premier League Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">T<span>+</span></div><div><b>TOUCHLINE</b><small>FOOTBALL MANAGER</small></div></div>
+      <div class="club-card"><div class="club-crest" id="clubCrest">N</div><div><small>YOUR CLUB</small><strong id="clubName">NORTH LONDON FC</strong><span>Premier League · 2025/26</span></div><i class="status-dot"></i></div>
+      <div class="nav-label">MANAGEMENT</div>
+      <nav class="main-nav">
+        <button class="nav-item active" data-view="match"><span class="nav-icon">◉</span> Matchday <kbd>01</kbd></button>
+        <button class="nav-item" data-view="squad"><span class="nav-icon">♟</span> Squad <kbd>02</kbd></button>
+        <button class="nav-item" data-view="tactics"><span class="nav-icon">⌗</span> Tactics <kbd>03</kbd></button>
+        <button class="nav-item" data-view="table"><span class="nav-icon">▤</span> League table <kbd>04</kbd></button>
+        <button class="nav-item" data-view="training"><span class="nav-icon">↗</span> Training <kbd>05</kbd></button>
+      </nav>
+      <div class="sidebar-bottom"><div class="season-progress"><div class="season-head"><span>SEASON PROGRESS</span><strong id="roundLabel">01 / 38</strong></div><div class="progress-track"><i id="seasonBar"></i></div><small>Every decision shapes your legacy.</small></div><div class="manager-profile"><div class="avatar">JM</div><div><strong>J. MORGAN</strong><small>FIRST TEAM MANAGER</small></div><span class="profile-dots">•••</span></div></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><div class="breadcrumbs"><span>SEASON 2025 / 26</span><b>/</b><strong id="topContext">MATCHDAY</strong></div><div class="top-actions"><div class="weather"><span>☀</span> 16° <i>·</i> LONDON</div><button class="icon-btn" title="Notifications">♧<i class="notification-dot"></i></button><button class="help-btn">?</button></div></header>
+      <section id="matchView" class="view active-view">
+        <div class="page-heading"><div><div class="eyebrow"><span class="live-dot"></span> MATCHDAY 01 <b>·</b> SATURDAY, AUGUST 16</div><h1>THE OPENING <em>WHISTLE.</em></h1><p>Your first test. Set the tone for the season.</p></div><div class="heading-right"><span class="competition-tag">PREMIER LEAGUE <b>◆</b></span><div class="round-count">FIXTURE <strong id="fixtureNumber">01</strong><span>/ 38</span></div></div></div>
+        <div class="match-layout">
+          <div class="match-column">
+            <div class="stadium-card"><div class="stadium-topline"><div><span class="live-pill"><i></i><span id="matchStatus">UP NEXT</span></span><span class="venue">NORTH LONDON STADIUM</span></div><button class="view-toggle" id="cameraToggle">◧ <span>TACTICAL CAM</span></button></div><div id="pitch3d" class="pitch-viewport"><div class="three-loading">BUILDING THE PITCH<span>···</span></div><div class="pitch-vignette"></div><div class="pitch-overlay"><div class="scoreboard"><div class="score-team home"><span class="mini-crest">N</span><span id="homeShort">NTH</span></div><strong id="homeScore">0</strong><i>:</i><strong id="awayScore">0</strong><div class="score-team away"><span id="awayShort">CHE</span><span class="mini-crest blue">C</span></div><div class="clock-chip"><span class="clock-dot"></span><span id="matchClock">00:00</span></div></div><div class="pitch-label home-label">NORTH LONDON FC <i>4-3-3</i></div><div class="pitch-label away-label" id="awayLabel">CHELSEA FC <i>4-2-3-1</i></div><div class="match-toast" id="matchToast">MATCH KICKS OFF</div></div><div class="pitch-bottom"><span><i class="pulse-dot"></i> <span id="matchStateText">KICK OFF IN</span></span><span>● 3D MATCH ENGINE <b>·</b> <span id="viewModeText">TACTICAL VIEW</span></span></div></div><div class="match-controls"><div class="control-left"><button class="play-button" id="playButton"><span>▶</span> <b>START MATCH</b></button><button class="sim-button" id="simButton">SIMULATE <span>↗</span></button></div><div class="speed-control"><span>SPEED</span><button class="speed-btn active" data-speed="1">1×</button><button class="speed-btn" data-speed="2">2×</button><button class="speed-btn" data-speed="4">4×</button></div><button class="full-screen-btn" id="fullscreenButton" title="Toggle match view">⛶</button></div></div>
+            <div class="below-match"><div class="panel momentum-panel"><div class="panel-heading"><div><span class="panel-kicker">LIVE MATCH</span><h3>Match momentum</h3></div><span class="updated-label"><i></i> LIVE</span></div><div class="momentum-chart"><div class="chart-labels"><span>ATTACKING</span><span>DEFENSIVE</span></div><div class="momentum-bars"><div class="momentum-home" id="homeMomentum" style="width:50%"></div><div class="momentum-away" id="awayMomentum" style="width:50%"></div></div><div class="momentum-numbers"><span id="homePoss">50%</span><span>POSSESSION</span><span id="awayPoss">50%</span></div></div><div class="match-stats"><div><span>SHOTS</span><strong id="homeShots">0</strong><i>—</i><strong id="awayShots">0</strong></div><div><span>ON TARGET</span><strong id="homeOn">0</strong><i>—</i><strong id="awayOn">0</strong></div><div><span>CORNERS</span><strong id="homeCorners">0</strong><i>—</i><strong id="awayCorners">0</strong></div></div></div><div class="panel events-panel"><div class="panel-heading"><div><span class="panel-kicker">THE STORY SO FAR</span><h3>Match timeline</h3></div><span class="event-count" id="eventCount">0 EVENTS</span></div><div class="event-list" id="eventList"><div class="empty-event"><span>◷</span><div><strong>It's almost time.</strong><small>The tunnel is buzzing. Make your final call.</small></div></div></div></div></div>
+          </div>
+          <aside class="right-rail"><div class="next-match-card"><div class="rail-title"><span>UP NEXT</span><span class="dots">•••</span></div><div class="next-fixture"><div class="fixture-team"><div class="fixture-crest home-crest">N</div><strong>NTH</strong><small>HOME</small></div><div class="versus"><span>VS</span><i>16 AUG</i></div><div class="fixture-team"><div class="fixture-crest away-crest" id="fixtureAwayCrest">C</div><strong id="fixtureAway">CHE</strong><small>AWAY</small></div></div><div class="fixture-meta"><span>◉ <b>14:00</b></span><span>▣ <b>SKY SPORTS</b></span></div></div><div class="panel tactics-quick"><div class="panel-heading"><div><span class="panel-kicker">YOUR GAME PLAN</span><h3>Tactical approach</h3></div><button class="tiny-arrow" data-goto="tactics">↗</button></div><div class="tactic-options"><button class="tactic-option selected" data-tactic="balanced"><span class="tactic-icon">◈</span><span><strong>Balanced</strong><small>Control the tempo</small></span><i class="radio-dot"></i></button><button class="tactic-option" data-tactic="pressing"><span class="tactic-icon">↗</span><span><strong>High press</strong><small>Win it back early</small></span><i class="radio-dot"></i></button><button class="tactic-option" data-tactic="counter"><span class="tactic-icon">⌁</span><span><strong>Counter attack</strong><small>Exploit the space</small></span><i class="radio-dot"></i></button></div><div class="tactic-footer"><span>FORMATION</span><strong id="formationQuick">4-3-3 <i>⌄</i></strong></div></div><div class="panel squad-spotlight"><div class="spotlight-top"><span class="panel-kicker">PLAYER TO WATCH</span><span class="rating-badge">⭐ 84</span></div><div class="spotlight-player"><div class="player-art"><div class="player-head"></div><div class="player-shirt"></div></div><div><h3 id="spotlightName">M. RIVERA</h3><span>STRIKER <i>·</i> #9</span></div></div><div class="player-form"><span>LAST 5 MATCHES</span><div class="form-dots"><i class="win">W</i><i class="win">W</i><i class="draw">D</i><i class="win">W</i><i class="win">W</i></div></div></div><div class="morale-card"><span class="morale-icon">✦</span><div><strong>THE SQUAD IS READY</strong><small>Morale is high ahead of kick-off.</small></div><span class="mood">92 <small>↑</small></span></div></aside>
+        </div>
+      </section>
+      <section id="contentView" class="view"></section>
+    </main>
+  </div>
+  <div id="toast" class="global-toast"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
